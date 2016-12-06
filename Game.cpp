@@ -4,6 +4,8 @@
 // CA1
 
 #include "Game.h"
+#define PLAYER_BAR 32
+#define ENEMY_BAR 8
 
 static int loopCount = 0;	// Counts the number of times the game loop has run
 
@@ -315,115 +317,61 @@ void Game::displayHealthBars()
 {
 	std::cout << " Player Health: ";
 
-	/* INSERT HEALTH BAR HERE*/
-	calcHealthBar(Player);
+	calcHealthBar(PLAYER_BAR, "Player");
 
 	SetConsoleTextAttribute(hstdout, 0x9F);				// Blue BG, Black txt
 	std::cout << " " << std::endl;						// End Of Line
 
 	std::cout << " E1 ";
-	calcHealthBar(E1);									// Enemy 1 health bar
+	calcHealthBar(ENEMY_BAR, "Enemy 1");				// Enemy 1 health bar
 	std::cout << " E2 ";
-	calcHealthBar(E2);									// Enemy 2 health bar
+	calcHealthBar(ENEMY_BAR, "Enemy 2");				// Enemy 2 health bar
 	std::cout << " E3 ";
-	calcHealthBar(E3);									// Enemy 3 health bar
+	calcHealthBar(ENEMY_BAR, "Enemy 3");				// Enemy 3 health bar
 	std::cout << " E4 ";
-	calcHealthBar(E4);									// Enemy 4 health bar
+	calcHealthBar(ENEMY_BAR, "Enemy 4");				// Enemy 4 health bar
 
 	std::cout << " " << std::endl;						// End Of Line
 	SetConsoleTextAttribute(hstdout, 0x0F);				// Black bg, White txt
 }
 
-void Game::calcHealthBar(int object)
+void Game::calcHealthBar(int barSize, char* objectID)
 {
-	// Health Bar
-	int healthBarSize = 0;								// Player healthbar is 32 characters long
-	int posHealth = 0, negHealth = 0;
+	int posHealth=0, negHealth;
+	char* barUnit = " ";
 
 	std::list<GameObject*>::const_iterator it = listOfGameObjects.begin(); // Iterator set to start of list
 
-	while (it != listOfGameObjects.end())
+	while (it != listOfGameObjects.end())				// Cycle through loop
 	{
-		if ((*it)->getID() == "Player" && object == 0)
+		if ((*it)->getID() == objectID)					// If object matches the one passed to the function
 		{
-			healthBarSize = 32;
-			posHealth = (*it)->getHealth() / 5;					// Divide Health by 5 to get each bar part
-			negHealth = healthBarSize - posHealth;
-			
-			SetConsoleTextAttribute(hstdout, 0x29);				// Display Positive Health Green
-			for (int i = 0; i < posHealth; i++)
-				std::cout << "_";								// Length up to 32
-
-			SetConsoleTextAttribute(hstdout, 0xC9);				// Display Negative Health Red
-			for (int i = 0; i < negHealth; i++)
-				std::cout << "_";								// Length up to 32
+			if (barSize == PLAYER_BAR)					// Player health bar size 32
+			{
+				posHealth = (*it)->getHealth() / 5;		// positive  -  Divide Health by 5 to get each bar unit
+				barUnit = "_";							// Blue line separates health Bars
+			}
+			else										// Enemy bar size 8
+				posHealth = (*it)->getHealth() / 20;	// positive  -  Bar Size 8 -> divide by 20
 		}
-
-		if ((*it)->getID() == "Enemy 1" && object == E1)
-		{
-			healthBarSize = 8;
-			posHealth = (*it)->getHealth() / 20;				// Divide Health by 20 for each bar part
-			negHealth = healthBarSize - posHealth;
-
-			SetConsoleTextAttribute(hstdout, 0x20);				// Display Positive Health Green
-			for (int i = 0; i < posHealth; i++)
-				std::cout << " ";								// Length up to 32
-
-			SetConsoleTextAttribute(hstdout, 0xC0);				// Display Negative Health Red
-			for (int i = 0; i < negHealth; i++)
-				std::cout << " ";								// Length up to 32
-		}
-		else if ((*it)->getID() == "Enemy 2" && object == E2)
-		{
-			healthBarSize = 8;
-			posHealth = (*it)->getHealth() / 20;				// Divide Health by 20 for each bar part
-			negHealth = healthBarSize - posHealth;
-
-			SetConsoleTextAttribute(hstdout, 0x20);				// Display Positive Health Green
-			for (int i = 0; i < posHealth; i++)
-				std::cout << " ";								// Length up to 32
-
-			SetConsoleTextAttribute(hstdout, 0xC0);				// Display Negative Health Red
-			for (int i = 0; i < negHealth; i++)
-				std::cout << " ";								// Length up to 32
-		}
-		else if ((*it)->getID() == "Enemy 3" && object == E3)
-		{
-			healthBarSize = 8;
-			posHealth = (*it)->getHealth() / 20;		// Divide Health by 20 for each bar part
-			negHealth = healthBarSize - posHealth;
-			
-			SetConsoleTextAttribute(hstdout, 0x20);				// Display Positive Health Green
-			for (int i = 0; i < posHealth; i++)
-				std::cout << " ";								// Length up to 32
-
-			SetConsoleTextAttribute(hstdout, 0xC0);				// Display Negative Health Red
-			for (int i = 0; i < negHealth; i++)
-				std::cout << " ";								// Length up to 32
-		}
-		else if ((*it)->getID() == "Enemy 4" && object == E4)
-		{
-			healthBarSize = 8;
-			posHealth = (*it)->getHealth() / 20;		// Divide Health by 20 for each bar part
-		//}
-
-		//if ((*it)->getID() == "Enemy 1" || (*it)->getID() == "Enemy 2" || (*it)->getID() == "Enemy 2" || (*it)->getID() == "Enemy 2")
-		//{
-			negHealth = healthBarSize - posHealth;
-
-			SetConsoleTextAttribute(hstdout, 0x20);				// Display Positive Health Green
-			for (int i = 0; i < posHealth; i++)
-				std::cout << " ";								// Length up to 32
-
-			SetConsoleTextAttribute(hstdout, 0xC0);				// Display Negative Health Red
-			for (int i = 0; i < negHealth; i++)
-				std::cout << " ";								// Length up to 32
-		}
-		
-		++it;
-		//std::cin.get();
-		SetConsoleTextAttribute(hstdout, 0x9F);
+		++it;											// Increment iterator
 	}
+
+	// PRINT THE BARS	
+	negHealth = barSize - posHealth;					// Calculate negative health
+	SetConsoleTextAttribute(hstdout, 0xC0);				// Red BG, Black txt
+	if (posHealth == 0)									// If Objects health is 0
+		std::cout << " R.I.P. ";						// Its dead
+	else
+	{
+		SetConsoleTextAttribute(hstdout, 0x29);			// Positive Green
+		for (int i = 0; i < posHealth; i++)
+			std::cout << barUnit;
+		SetConsoleTextAttribute(hstdout, 0xC9);			// Negative Red
+		for (int i = 0; i < negHealth; i++)
+			std::cout << barUnit;
+	}
+	SetConsoleTextAttribute(hstdout, 0x9F);				// Reset colour, Blue BG, Black txt
 }
 
 // Display Number Of Loops
@@ -447,13 +395,9 @@ int Game::GameOver()
 	while ( it != listOfGameObjects.end() )
 	{
 		if ( (*it)->getID() == "Player" && listOfGameObjects.size() == 1 ) // No Enemies on list
-		{
 			result = Win;												   // Win Game
-		}
 		if ( (*listOfGameObjects.begin())->getID() != "Player" )		   // Player erased
-		{
 			result = Lose;												   // Lose Game
-		}
 		++it;
 	}
 	

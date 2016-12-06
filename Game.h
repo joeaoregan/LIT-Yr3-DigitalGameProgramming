@@ -33,7 +33,7 @@ public:
 	void drawGrid();			// Draw the grid to display game object positions
 	void ClearScreen();			// Clear the screen -- borrowed code
 	void displayHealthBars();	// Display the players current health
-	void calcHealthBar(int);	// Display the players current health
+	void calcHealthBar(int, char*);	// Display the players current health
 	void LoopCounter();			// Display number of times game has looped
 	int GameOver();				// Display Game Over message
 
