@@ -32,9 +32,9 @@
 
 ## Screenshots:
 
-![Game Logos](https://raw.githubusercontent.com/joeaoregan/Yr3-Digital-Games-CA1/master/Screenshots/screenshot1.png "Game Logos")
+![Game Logos](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-DigitalGameProgramming/master/Screenshots/screenshot1.png "Game Logos")
 ##### 1. Logo Screen
-![Game Grid](https://raw.githubusercontent.com/joeaoregan/Yr3-Digital-Games-CA1/master/Screenshots/screenshot2.png "Game Grid")
+![Game Grid](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-DigitalGameProgramming/master/Screenshots/screenshot2.png "Game Grid")
 ##### 2. 2D Game Grid
-![Information Messages](https://raw.githubusercontent.com/joeaoregan/Yr3-Digital-Games-CA1/master/Screenshots/screenshot3.png "Information Messages")
+![Information Messages](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-DigitalGameProgramming/master/Screenshots/screenshot3.png "Information Messages")
 ##### 3. Game Messages

@@ -1,31 +1,47 @@
-# LIT: Games Design and Development
-## Year 3: Digital Games CA2
-### Assignment 2
+```c
+    ________                 __  .__          Object
+    \______ \   ____ _____ _/  |_|  |__     Oriented
+     |    |  \_/ __ \\__  \\   __\  |  \
+     |    `   \  ___/ / __ \|  | |   Y  \
+    /_______  /\___  >____  /__| |___|  /
+            \/     \/___  \/      __  \/     .__
+                  /     \ _____ _/  |_  ____ |  |__
+                 /  \ /  \\__  \\   __\/ ___\|  |  \
+                /    Y    \/ __ \|  | \  \___|   Y  \
+     K00203642  \____|__  (____  /__|  \___ > ___|  /
+     Joe O'Regan        \/     \/          \/     \/
+```
 
-![Digital Games CA2 - Game Screen](https://raw.githubusercontent.com/joeaoregan/Yr3-S6-Digital-Games-CA2/master/Screenshots/screenshot.png "1. Game Screen")
-###### Digital Games CA2: Game Screen 
+# BSc Computing (Games Design and Development)
+## Joe O'Regan (K00203642)
+### Year 3: Digital Game Programming Principles
 
 ---
 
+### Assignment 1
 
-Code for Take Home Assignment 2 of 3rd year Digital Games Programming module
+Text Adventure Game
 
-### Spec:
+---
 
-Build a text based adventure game using OO techniques, 2-dimensional array map, 
-and dynamic placing of enemy and treasure chest objects as well as the player on the map with 3 levels of difficulty 
+### Assignment 2
 
-Using the enemy and Player classes you created in the first assignment. Introduce the following
+Text based adventure game extended
 
-* Displaying an ASCII map
-* Dynamic/random placing of enemy and treasure objects
-* Introduce stats such as skill, stamina, and luck which are used in the Warlock of Firetop mountain
-* Utilise a more advanced combat system i.e. something similar to the Warlock of Firetop mountain
-* Develop a story line for the game, consider a text based format e.g. Zork so that the user doesn’t simply move around the map but interacts with its surroundings.
-* Consider night and day implications for what happens with creature movement
-* Consider the use of power up items or magical items in treasure chests which are randomly placed on the map these power ups might reveal more of the map etc or teleport you 
-* Use your imagination and your experiences of playing games to enhance the game experience.
+---
 
+## Screenshots:
 
-The classes should utilise header files. i.e. definition in .h file and functions in .cpp files
+### Assignment 1
 
+![Game Logos](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-DigitalGameProgramming/master/Screenshots/screenshot1.png "Game Logos")
+##### 1. Logo Screen
+![Game Grid](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-DigitalGameProgramming/master/Screenshots/screenshot2.png "Game Grid")
+##### 2. 2D Game Grid
+![Information Messages](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-DigitalGameProgramming/master/Screenshots/screenshot3.png "Information Messages")
+##### 3. Game Messages
+
+### Assignment 2
+
+![Digital Games CA2 - Game Screen](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-DigitalGameProgramming/master/Screenshots/screenshot.png "1. Game Screen")
+###### Digital Games CA2: Game Screen 
