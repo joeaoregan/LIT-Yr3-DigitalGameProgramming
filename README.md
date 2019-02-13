@@ -12,15 +12,21 @@
      Joe O'Regan        \/     \/          \/     \/
 ```
 
-# BSc Computing (Games Design and Development)
+# Digital Game Programming Principles
 ## Joe O'Regan (K00203642)
-### Year 3: Digital Game Programming Principles
+### Year 3 (2016/17), Semester 5
+#### BSc Computing (Games Design and Development)
+##### Limerick Institute of Technology
 
 ---
 
+## Digital Game Programming
 ### Assignment 1
 
-Text Adventure Game
+**Text Adventure Game**
+The object of this assignment was to use C++ to implement a game with Object Oriented Classes for Player and Enemy that inherit from a GameObject class, a Game class with 4 enemy and 1 player pointer objects stored in a list of pointers to Game Objects, A main.cpp file is used to create a Game object call the init() function of the Game Class, and loop 20 times through the draw(), update(), battle(), info(), and clean() functions, before printing the Game Object details to screen a final time using the info() function. 
+
+The classes are separated into header files for definitions, and the functions of the classes are contained in .cpp files. Object-Oriented Programming techniques are used to complete the program.
 
 ---
 
