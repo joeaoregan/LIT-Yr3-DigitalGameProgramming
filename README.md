@@ -23,16 +23,29 @@
 ## Digital Game Programming
 ### Assignment 1
 
-**Text Adventure Game**
+#### Text Adventure Game
 The object of this assignment was to use C++ to implement a game with Object Oriented Classes for Player and Enemy that inherit from a GameObject class, a Game class with 4 enemy and 1 player pointer objects stored in a list of pointers to Game Objects, A main.cpp file is used to create a Game object call the init() function of the Game Class, and loop 20 times through the draw(), update(), battle(), info(), and clean() functions, before printing the Game Object details to screen a final time using the info() function. 
 
 The classes are separated into header files for definitions, and the functions of the classes are contained in .cpp files. Object-Oriented Programming techniques are used to complete the program.
+
+* GameObject class
+* Enemy and Player classes that inherit from GameObject
+* Game Loop
 
 ---
 
 ### Assignment 2
 
-Text based adventure game extended
+#### Text based adventure game extended
+
+* 2-dimensional array map (already implemented in assignment 1)
+* Dynamic placing of Enemy, Treasure Chest, and Player objects on the map
+* 3 levels of difficulty
+* Stats
+* More advanced combat system
+* Story line
+* Night / Day
+* Power ups
 
 ---
 
